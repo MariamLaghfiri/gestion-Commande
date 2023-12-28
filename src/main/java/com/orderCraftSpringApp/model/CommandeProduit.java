@@ -26,6 +26,4 @@ public class CommandeProduit {
     @ManyToOne
     @JoinColumn(name = "produit_id")
     private Produit produit;
-
-
 }

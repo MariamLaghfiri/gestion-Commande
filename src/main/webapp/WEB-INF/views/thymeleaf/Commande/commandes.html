@@ -8,17 +8,22 @@
 <body>
     <h1>Commande</h1>
     <table class="table">
+        <tr><th colspan="4" ><a th:href="@{'addCommande'}"  class="btn btn-dark">Ajouter</a></th></tr>
         <tr>
             <th>Referance</th>
             <th>Status</th>
             <th>Prix</th>
             <th>Client</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
         </tr>
         <tr th:each="commande : ${commandes}">
             <td th:text="${commande.referance}"></td>
             <td th:text="${commande.status}"></td>
             <td th:text="${commande.prix}"></td>
             <td th:text="${commande.client.getNom()}"></td>
+            <td><a th:href="@{/editClient/{id}(id=${commande.id})}" class="btn btn-dark">Edit</a></td>
+            <td><a onclick="return confirm('tes-vous sur ?')" th:href="@{/deleteClient/{id}(id=${commande.id})}" class="btn btn-dark">Supprimer</a></td>
         </tr>
     </table>
 

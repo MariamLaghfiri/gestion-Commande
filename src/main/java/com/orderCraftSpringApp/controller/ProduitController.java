@@ -42,7 +42,6 @@ public class ProduitController {
 
     @PostMapping("/updateProduit")
     public String updateProduit(@ModelAttribute Produit produit) {
-//        System.out.println("slm");
         produitService.saveProduit(produit);
         return "redirect:/produits";
     }
